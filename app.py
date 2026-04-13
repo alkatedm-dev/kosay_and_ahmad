@@ -16,13 +16,13 @@ def getMessage():
 @app.route('/')
 def webhook():
     bot.remove_webhook()
+    # تأكد إن الرابط هون فيه التوكن في آخره
     bot.set_webhook(url='https://kosay-and-ahmad-1.onrender.com/' + TOKEN)
     return "OK", 200
 
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
-    bot.reply_to(message, "أخيراً يا قصي! أنا سمعتك!")
+    bot.reply_to(message, "أخيراً يا قصي! أنا شغال وعم بسمعك.")
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get('PORT', 5000)))
-    
